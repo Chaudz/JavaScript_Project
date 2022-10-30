@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: rgb(32, 32, 88);
+    margin: 0;
+}
+.toggle{
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 10px;
+    top: 20px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toggle::before{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 28px;
+    background-color: white;
+    transform: translateY(-5px);
+}
+.toggle::after{
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 28px;
+    background-color: white;
+    transform: translateY(5px);
+}
+.toggle.active::before{
+    transform: translateY(0) rotate(45deg);
+}
+.toggle.active::after{
+    transform: translateY(0) rotate(-45deg);
+}
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    transition: 0.5s all ease-in-out;
+    /* display: none; */
+}
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul{
+    padding: 0;
+    /* height: 100%; */
+}
+.sidebar ul  .firstLi_silebar{
+    background-color: #f0f0f0;
+}
+.sidebar ul li:hover{
+    background-color: #f0f0f0;
+}
+.sidebar ul li{
+    box-sizing: border-box;
+    padding-left: 20px;
+    width: 100%;
+    list-style: none;
+    display: inline-block;
+}
+.sidebar ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 40px;
+}
